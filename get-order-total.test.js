@@ -43,8 +43,7 @@ console.clear();
 
 // 1. A basic order with price and shipping.
 const result1 = getOrderTotal(order1);
-const result2 = getOrderTotal(order2);
-if (result1 !== 22 || result2 !== 36) {
+if (result1 !== 22) {
   throw new Error(
     `Should have calculated a simple order. Got: ${result1}. Expected: 22.`
   );
