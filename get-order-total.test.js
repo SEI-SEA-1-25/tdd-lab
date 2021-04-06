@@ -42,8 +42,20 @@ console.clear();
 // We want tests for:
 
 // 1. A basic order with price and shipping.
-
+const result1 = getOrderTotal(order1);
+const result2 = getOrderTotal(order2);
+if (result1 !== 22 || result2 !== 36) {
+  throw new Error(
+    `Should have calculated a simple order. Got: ${result1}. Expected: 22.`
+  );
+}
 // 2. An order where some items have quantity.
+const result2 = getOrderTotal(order2);
+if (result2 !== 40) {
+  throw new Error(
+    `Should have calculated an order where some items have quantity. Got: ${result2}. Expected: 40.`
+  );
+}
 
 // 3. An order where state taxes are multiplied at the end.
 //    Note that the best way to handle that is to take in another parameter to our function!
@@ -52,3 +64,5 @@ console.clear();
 // 4. An order where some items are digital, i.e., have no shipping cost.
 
 // 5. An order where the price PRE-shipping is above 100, in which case we want to remove shipping altogether.
+
+console.log("All tests have passed!");
