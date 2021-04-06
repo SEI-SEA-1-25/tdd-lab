@@ -1,11 +1,18 @@
 const getOrderTotal = require("./get-order-total");
 
+const stateTaxes = {
+  NY: 5,
+  CA: 8,
+  WAS: 10,
+};
+
 const order1 = [
   {
     name: "Charmander",
     price: 8,
     shipping: 8,
   },
+
   {
     name: "Mew",
     price: 1,
